@@ -8,7 +8,7 @@ import Routes from './routes';
 import './app.scss';
 
 const cache = new InMemoryCache();
-const httpLink = new HttpLink({ uri: 'http://localhost:4000/graphql' });
+const httpLink = new HttpLink({ uri: 'https://chuck-norris-api123.herokuapp.com/graphql' });
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers
