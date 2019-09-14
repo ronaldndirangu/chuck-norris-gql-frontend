@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import loginReducer from './loginReducer';
-import jokeReducer from './jokeReducer';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -17,8 +16,7 @@ const loginPersistConfig = {
 };
 
 const rootReducer = combineReducers({
-  loginReducer: persistReducer(loginPersistConfig, loginReducer),
-  jokeReducer
+  loginReducer: persistReducer(loginPersistConfig, loginReducer)
 });
 
 export default persistReducer(persistConfig, rootReducer);

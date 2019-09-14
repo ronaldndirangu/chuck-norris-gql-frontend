@@ -9,6 +9,7 @@ import { Redirect, withRouter } from 'react-router-dom';
 
 const LoginContainer = ({ login, token }) => {
   const [signIn, { data, error, loading }] = useMutation(LOGIN_USER);
+  console.log({ error });
   window.localStorage.setItem('token', token);
 
   if (data) {

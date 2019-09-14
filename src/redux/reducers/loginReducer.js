@@ -1,5 +1,5 @@
 import {
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS, LOG_OUT
 } from '../types';
 
 const initialState = {
@@ -14,6 +14,12 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         user: action.user,
         token: action.token
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        user: null,
+        token: null
       };
     default:
       return state;
