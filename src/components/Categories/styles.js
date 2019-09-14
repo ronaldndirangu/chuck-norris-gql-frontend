@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors } from '../../Colors';
 
 const CategoriesWrapper = styled.div`
-  padding: 50px;
+  padding: 0px 20px;
 `;
 
 CategoriesWrapper.Title = styled.div`
@@ -28,6 +28,11 @@ CategoriesWrapper.ListItem = styled.li`
   color: ${Colors.coal};
   text-transform: capitalize;
   font-weight: 500;
+  transition: all 250ms ease-in-out 0s;
+
+  &:hover {
+    background-color: ${Colors.primary}44;
+  }
 `;
 
 export default CategoriesWrapper;

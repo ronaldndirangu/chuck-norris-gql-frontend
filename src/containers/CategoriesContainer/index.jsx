@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { GET_CATEGORIES } from '../../queries';
 import Categories from '../../components/Categories';
 import Joke from '../../components/Joke';
-import Container, { Brand } from './styles';
+import Container, { Brand, Wrapper } from './styles';
 import Avatar from '../../components/Avatar';
 import { doLogout } from '../../redux/actions/loginAction';
 
@@ -21,14 +21,17 @@ const CategoriesContainer = ({ history, logout, user, token }) => {
     <Redirect to='/' />
   ) : (
     <Container>
-      <Brand>ChuckNorris</Brand>
       <Avatar logout={logout} history={history} text={user[0]} />
-      <Categories
-        data={data}
-        error={error}
-        loading={loading}
-        handleCategoryClick={handleCategoryClick}
-      />
+      <Wrapper>
+        <Brand>ChuckNorris</Brand>
+        <Categories
+          data={data}
+          error={error}
+          loading={loading}
+          handleCategoryClick={handleCategoryClick}
+        />
+
+      </Wrapper>
       <Joke category={category} />
     </Container>
   );

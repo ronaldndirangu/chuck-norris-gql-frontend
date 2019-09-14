@@ -23,7 +23,7 @@ const Joke = ({ category }) => {
         onClick={() => refetch()}
         color={Colors.white}
         bgColor={Colors.primary}
-        disabled={!(data && data.joke.value)}
+        disabled={!(data && data.joke.value) || (loading || networkStatus === 4)}
       />
     </JokeStyles>);
 };

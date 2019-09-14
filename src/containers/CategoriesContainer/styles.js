@@ -8,8 +8,9 @@ const Container = styled.div`
 
   > div {
     flex: 0.5;
+    overflow: scroll;
 
-    &:nth-child(4) {
+    &:nth-child(3) {
       width: 45%;
       height: 100%;
       background-color: ${Colors.primary}75;
@@ -23,13 +24,16 @@ const Container = styled.div`
 `;
 
 export const Brand = styled.div`
-  position: absolute;
-  top: 10px;
+  margin: 20px;
   left: 20px;
   font-size: 2.5rem;
   cursor: pointer;
   color: ${Colors.primary}
   font-family: New Century Schoolbook, serif;
+`;
+
+export const Wrapper = styled.div`
+
 `;
 
 export default Container;
