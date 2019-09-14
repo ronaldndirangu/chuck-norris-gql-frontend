@@ -11,7 +11,7 @@ const Avatar = ({ image, text, history, logout }) => {
   };
   return (
     <AvatarStyles onClick={() => setShow(!show)}>
-      A
+      {text}
       {
         show && (
           <AvatarStyles.DropDown onClick={() => doLogout()}>

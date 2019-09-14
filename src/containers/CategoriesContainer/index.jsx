@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_CATEGORIES } from '../../queries';
 import Categories from '../../components/Categories';
@@ -9,7 +9,7 @@ import Container, { Brand } from './styles';
 import Avatar from '../../components/Avatar';
 import { doLogout } from '../../redux/actions/loginAction';
 
-const CategoriesContainer = ({ history, logout, user }) => {
+const CategoriesContainer = ({ history, logout, user, token }) => {
   const [category, setCategory] = useState();
   const { loading, error, data } = useQuery(GET_CATEGORIES);
 
@@ -17,11 +17,12 @@ const CategoriesContainer = ({ history, logout, user }) => {
     setCategory(category);
   };
 
-  console.log({ user });
-  return (
+  return !token ? (
+    <Redirect to='/' />
+  ) : (
     <Container>
       <Brand>ChuckNorris</Brand>
-      <Avatar logout={logout} history={history} />
+      <Avatar logout={logout} history={history} text={user[0]} />
       <Categories
         data={data}
         error={error}
@@ -34,7 +35,8 @@ const CategoriesContainer = ({ history, logout, user }) => {
 };
 
 const mapStateToProps = ({ loginReducer }) => ({
-  user: loginReducer.user
+  user: loginReducer.user,
+  token: loginReducer.token
 });
 
 const mapDispatchToprops = dispatch => ({

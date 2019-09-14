@@ -12,7 +12,7 @@ const persistConfig = {
 const loginPersistConfig = {
   key: 'auth',
   storage,
-  blacklist: ['token']
+  blacklist: ['token', 'name']
 };
 
 const rootReducer = combineReducers({

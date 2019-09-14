@@ -55,12 +55,22 @@ export const FormFieldStyles = styled.div`
   }
 
   input {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+  }
+
+  span {
+    margin-bottom: 15px;
   }
 `;
 
 FormFieldStyles.Label = styled.label`
   color: ${Colors.coal};
+`;
+
+FormFieldStyles.Error = styled.span`
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: red;
 `;
 
 export const FormBannerStyles = styled.div`

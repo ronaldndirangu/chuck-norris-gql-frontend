@@ -12,7 +12,7 @@ const loginReducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        user: action.user,
+        user: action.name,
         token: action.token
       };
     case LOG_OUT:
