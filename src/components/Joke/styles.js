@@ -14,6 +14,8 @@ const JokeStyles = styled.div`
 
   button {
     margin: 50px;
+    text-transform: uppercase;
+    font-size: 14px;
   }
 `;
 
