@@ -13,12 +13,13 @@ const Container = styled.div`
     &:nth-child(3) {
       width: 45%;
       height: 100%;
-      background-color: ${Colors.primary}75;
+      background-color: ${Colors.primary}45;
       padding: 30px;
       overflow: auto;
       box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
       box-sizing: border-box;
-      color: #fff;
+      font-weight: 500;
+      color: #181818;
     }
   }
 `;
